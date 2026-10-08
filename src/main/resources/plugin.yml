@@ -1,5 +1,5 @@
 name: BrutalClean
-version: 1.0.7
+version: 1.0.9
 main: cn.xinyue_neko.plugins.BrutalClean.BrutalClean
 api-version: 1.13
 description: DeepSeek帮我Vibe的暴力清理
