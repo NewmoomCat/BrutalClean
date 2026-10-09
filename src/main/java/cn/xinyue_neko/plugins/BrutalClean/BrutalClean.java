@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class BrutalClean extends JavaPlugin {
 
     private int taskId = -1;
-    private final String prefix = "[暴力扫地机] ";
+    private static final String prefix = "[暴力扫地机] ";
 
     @Override
     public void onEnable() {
@@ -56,8 +56,10 @@ public class BrutalClean extends JavaPlugin {
 
         if (totalRemoved > 0) {
             String msg = "本次清理共移除 " + totalRemoved + " 个实体。";
-            getServer().getConsoleSender().sendMessage("本次清理共移除 " + totalRemoved + " 个实体。");
-            Bukkit.broadcastMessage(prefix + ChatColor.RED + msg);
+            getServer().getConsoleSender().sendMessage(prefix + msg);
+            for (Player player : Bukkit.getOnlinePlayers()) {
+                player.sendMessage(prefix + ChatColor.RED + msg);
+            }
         }
     }
 
